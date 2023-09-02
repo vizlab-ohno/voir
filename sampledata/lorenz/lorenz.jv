@@ -1,0 +1,27 @@
+#VOIR configuration file for Lorenz Attractor
+GRIDSIZE 100 100 100
+
+NVEC 1
+NSCAL 2
+
+#COORDINATES
+UNIFORM
+DX 0.010101 0.010101 0.010101
+CORNER -0.500000 -0.500000 0.000000
+
+#DATA
+SINGLEPRECISION
+
+#Vector Data
+VECT0_LABEL Vector
+VECT0X  c:\Users\ohno\lorenz\LorenzVX
+VECT0Y  c:\Users\ohno\lorenz\LorenzVY
+VECT0Z  c:\Users\ohno\lorenz\LorenzVZ
+
+#Scalar Data
+SCAL0_LABEL Scalar1
+SCAL0  c:\Users\ohno\lorenz\LorenzE
+
+SCAL1_LABEL Scalar2
+SCAL1  c:\Users\ohno\lorenz\LorenzET
+

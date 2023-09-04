@@ -6,15 +6,7 @@ namespace voirCommon
 	public static class voirConst
 	{
 		//ParamFile
-		// for win
-		//public const string paramfile = "c:\\linux\\voir\\dynamo.jv";
-		//public const string paramfile = "Assets/voirdata/dynamo.jv";
-		//public const string paramfile = "Assets/voirdata/turb.jv";
 		public const string paramfile = "Assets/voirdata/lorenz.jv";
-
-		// for mac
-		//public const string paramfile = "/Users/ohno/voir/dynamo.jv";
-		//public const string paramfile = "Assets/voirdata/dynamo.jv";
 
 		// Math
 		public const double PI = 3.1415926535897931;

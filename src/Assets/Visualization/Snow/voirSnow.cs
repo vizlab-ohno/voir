@@ -1,8 +1,3 @@
-//**********************************************
-// Copyright (c) 2023 Nobuaki Ohno
-// Released under the MIT license
-// https://opensource.org/licenses/mit-license.php
-//**********************************************
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -160,11 +155,15 @@ public class voirSnow : MonoBehaviour
                 ptcls[i].GetComponent<Transform>().localRotation = prot;
             }
         }
-        float t = Time.time;
-        double tpi = 2.0*voirConst.PI;
-        for (int i = 0; i < voirConst.SW_NUM_SNOW; i++){
-            ptcls[i].GetComponent<Renderer>().material.color 
-           = new Color(1,1,1,(float)((Math.Sin((tpi*i)/(voirConst.SW_NUM_SNOW-1)+tpi*0.5*t)+1.0)/2.0));
+        if(voirConst.SN_BLINK){
+            float t = Time.time;
+            double tpi = 2.0*voirConst.PI;
+            double wt = tpi*0.5*t;
+            double ph = tpi/(voirConst.SW_NUM_SNOW-1);
+            for (int i = 0; i < voirConst.SW_NUM_SNOW; i++){
+                ptcls[i].GetComponent<Renderer>().material.color 
+               = new Color(1,1,1,(float)((Math.Sin((ph*i+wt))+1.0)/2.0));
+            }
         }
 
     }

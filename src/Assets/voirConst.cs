@@ -1,9 +1,3 @@
-//**********************************************
-// Copyright (c) 2023 Nobuaki Ohno
-// Released under the MIT license
-// https://opensource.org/licenses/mit-license.php
-//**********************************************
-
 using UnityEngine;
 using System.Collections;
 
@@ -14,8 +8,9 @@ namespace voirCommon
 		//ParamFile
 		// for win
 		//public const string paramfile = "c:\\linux\\voir\\dynamo.jv";
-		public const string paramfile = "Assets/voirdata/dynamo.jv";
+		//public const string paramfile = "Assets/voirdata/dynamo.jv";
 		//public const string paramfile = "Assets/voirdata/turb.jv";
+		public const string paramfile = "Assets/voirdata/lorenz.jv";
 
 		// for mac
 		//public const string paramfile = "/Users/ohno/voir/dynamo.jv";
@@ -54,6 +49,7 @@ namespace voirCommon
 
 		//Snow
 		public const int SW_NUM_SNOW = 10000;
+		public const bool SN_BLINK = true;
 
 		//Flash Light
 		public const int FL_NUM_SNOW = 4000;

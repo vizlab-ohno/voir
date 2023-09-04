@@ -1,8 +1,3 @@
-//**********************************************
-// Copyright (c) 2023 Nobuaki Ohno
-// Released under the MIT license
-// https://opensource.org/licenses/mit-license.php
-//**********************************************
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -41,6 +36,7 @@ public class voirFlashLight : MonoBehaviour
     MainControll maincontroll;
 
     float costheta, tantheta;
+    bool first;
 
     void Awake()
     {
@@ -77,6 +73,7 @@ public class voirFlashLight : MonoBehaviour
             trackd.getRContData(0, ref pos);
             trackd.getRContData(1, ref dir);
             updatedb(pos, dir);
+            first = false;
         }
  
     }
@@ -95,6 +92,7 @@ public class voirFlashLight : MonoBehaviour
             ptcls[i].transform.SetParent(transform);
             ptcls[i].GetComponent<Transform>().localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
             ptcls[i].GetComponent<Transform>().localScale = new Vector3(0.0025f, 0.0025f, 0.0025f);
+            ptcls[i].SetActive(false);
         }
     }
 
@@ -124,6 +122,7 @@ public class voirFlashLight : MonoBehaviour
 
     void calcp()
     {
+        if(first == true) return;
         double h = coord.h * voirConst.DH;
         double maxvalue;
         if (nvec < 0)
@@ -330,6 +329,7 @@ public class voirFlashLight : MonoBehaviour
         }
 
         nvec = 0;
+        first = true;
 
     }
 

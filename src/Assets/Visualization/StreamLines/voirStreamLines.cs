@@ -1,8 +1,3 @@
-//**********************************************
-// Copyright (c) 2023 Nobuaki Ohno
-// Released under the MIT license
-// https://opensource.org/licenses/mit-license.php
-//**********************************************
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -434,6 +429,10 @@ public class voirStreamLines : MonoBehaviour
 
     public void StartLine(int nv, double [] pos, bool norm)
     {
+        bool inside;
+        inside = coord.insideData(pos);
+
+        if(!inside) return;
         integrate = true;
         points[nv, ncalc[nv]].clear();
         points[nv, ncalc[nv]].start(pos, norm);

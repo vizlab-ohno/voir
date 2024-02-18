@@ -24,6 +24,7 @@ public class voirCurveObj : MonoBehaviour
     GameObject[] Lines;
     voirParam param;
     voirCoord coord;
+    [SerializeField] Material linemat;
 
         // Start is called before the first frame update
     void Start()
@@ -180,7 +181,7 @@ public class voirCurveObj : MonoBehaviour
             //drawline[i] = new LineRenderer();
             drawline[i] = Lines[i].AddComponent<LineRenderer>();
             drawline[i].useWorldSpace = false;
-            drawline[i].material = new Material(Shader.Find("Sprites/Default"));
+            drawline[i].material = linemat;//new Material(Shader.Find("Sprites/Default"));
 
             drawline[i].startWidth = 0.01f;
             drawline[i].endWidth = 0.01f;

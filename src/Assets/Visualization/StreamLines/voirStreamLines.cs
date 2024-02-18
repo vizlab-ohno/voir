@@ -117,6 +117,7 @@ public class voirStreamLines : MonoBehaviour
     MainControll maincontroll;
     int nvect;
     double[] spos;
+    [SerializeField] Material linemat;
 
     void Awake()
     {
@@ -296,7 +297,7 @@ public class voirStreamLines : MonoBehaviour
                 //drawline[i,j] = new LineRenderer();
                 drawline[i,j] = Lines[i,j].AddComponent<LineRenderer>();
                 drawline[i,j].useWorldSpace = false;
-                drawline[i,j].material = new Material(Shader.Find("Sprites/Default"));
+                drawline[i,j].material = linemat;//new Material(Shader.Find("Sprites/Default"));
 
                 drawline[i,j].startWidth = 0.005f;
                 drawline[i,j].endWidth = 0.005f;

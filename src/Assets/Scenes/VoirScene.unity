@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballObj: {fileID: 1604701057178919972, guid: 06734cc9686de4baaa944c4c2701b3e5, type: 3}
+  linemat: {fileID: 2100000, guid: 47de147d149ee3b4dbdd0d3ab9ce2ceb, type: 2}
 --- !u!1 &49597396
 GameObject:
   m_ObjectHideFlags: 0

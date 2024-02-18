@@ -22,6 +22,7 @@ public class voirFrame : MonoBehaviour
     float[] cmaxw;
     float[] hdx;
     voirCoord coord;
+    [SerializeField] Material linemat;
 
     void Awake()
     {
@@ -387,7 +388,7 @@ public class voirFrame : MonoBehaviour
             //lineRenderer[i] = new LineRenderer();
             lineRenderer[i] = Frame[i].AddComponent<LineRenderer>();
             lineRenderer[i].useWorldSpace = false;
-            lineRenderer[i].material = new Material(Shader.Find("Sprites/Default"));
+            lineRenderer[i].material = linemat;//new Material(Shader.Find("Sprites/Default"));
 
             lineRenderer[i].startWidth = 0.01f;
             lineRenderer[i].endWidth = 0.01f;
@@ -404,7 +405,7 @@ public class voirFrame : MonoBehaviour
             //lineRendererW[i] = new LineRenderer();
             lineRendererW[i] = FrameW[i].AddComponent<LineRenderer>();
             lineRendererW[i].useWorldSpace = false;
-            lineRendererW[i].material = new Material(Shader.Find("Sprites/Default"));
+            lineRendererW[i].material = linemat;//new Material(Shader.Find("Sprites/Default"));
 
             lineRendererW[i].startWidth = 0.01f;
             lineRendererW[i].endWidth = 0.01f;

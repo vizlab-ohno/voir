@@ -10,6 +10,8 @@ using UnityEngine.XR;
 
 public class tracking : MonoBehaviour
 {
+    const float contAdjAngle = 58f;
+    const float headAdjAngle = -2f;
     UnityEngine.XR.InputDevice Head;
     UnityEngine.XR.InputDevice RDevice;
     UnityEngine.XR.InputDevice LDevice;
@@ -144,7 +146,7 @@ public class tracking : MonoBehaviour
         Vector3 right = hquat * Vector3.right;
 
 
-        Quaternion adj = Quaternion.AngleAxis(-2f, right.normalized);
+        Quaternion adj = Quaternion.AngleAxis(headAdjAngle, right.normalized);
         hfd = adj * forward;
         hup = adj * up;
         hrt = right;
@@ -176,7 +178,7 @@ public class tracking : MonoBehaviour
         Vector3 right = rquat * Vector3.right;
 
 
-        Quaternion adj = Quaternion.AngleAxis(58f, right.normalized);
+        Quaternion adj = Quaternion.AngleAxis(contAdjAngle, right.normalized);
         rfd = adj * forward;
         rup = adj * up;
         rrt = right;
@@ -208,7 +210,7 @@ public class tracking : MonoBehaviour
         Vector3 right = lquat * Vector3.right;
 
 
-        Quaternion adj = Quaternion.AngleAxis(58f, right.normalized);
+        Quaternion adj = Quaternion.AngleAxis(contAdjAngle, right.normalized);
         lfd = adj * forward;
         lup = adj * up;
         lrt = right;
